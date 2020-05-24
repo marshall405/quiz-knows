@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>QuizKnow</title>
+    <title>QuizKnows</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -9,7 +9,31 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <%= yield %>
+  <body>        
+    <header>
+    <h1 class="logo"> QuizKnows </h1>
+    <nav>   
+        <ul>
+            <li><a href="/"> about </a></li>
+            <li><a href="/"> enter social-security </a></li>
+            <li><a href="/"> getting started </a></li>
+        </ul>
+    </nav>
+  </header>
+  <div class="sidebar">
+    <% @ads.each do |ad| %>
+        <%= link_to ad[:url] do %> 
+            <div class="ad">
+                <%= ad[:name] %>
+            </div>
+        <% end %>
+    <%end%>
+  </div>
+  <div class="container">
+    <%=yield%>
+  </div>
+  <footer>
+    Give us the moneys.com
+  </footer>
   </body>
 </html>
