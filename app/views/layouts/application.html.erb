@@ -14,12 +14,16 @@
     <h1 class="logo"> QuizKnows </h1>
     <nav>   
         <ul>
-            <li><a href="/"> about </a></li>
-            <li><a href="/"> enter social-security </a></li>
-            <li><a href="/"> getting started </a></li>
+            <% if current_user %>
+              <li><%= link_to "Logout", :logout %></li>
+              <li><%= link_to "Edit User", edit_user_path(current_user) %></li>
+            <% else %>
+              <li><a href="/"> about </a></li>
+              <li><a href="/"> enter social-security </a></li>
+              <li><a href="/"> getting started </a></li>
+            <% end %>
         </ul>
     </nav>
-    <p class="notice"><%= notice %></p>
   </header>
   <div class="sidebar">
     <% @ads.each do |ad| %>
@@ -31,6 +35,7 @@
     <%end%>
   </div>
   <div class="container">
+    <p class="notice"><%= notice %></p>
     <%=yield%>
   </div>
   <footer>

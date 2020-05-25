@@ -1,2 +1,32 @@
-<h1>User#edit</h1>
-<p>Find me in app/views/user/edit.html.erb</p>
+<h1> Edit User </h1>
+
+<div class="login-form">
+    <% current_user.errors.full_messages.each do |message| %>
+        <p class="errors"><%=message %></p>
+    <% end %>
+    <div class="inner-login-form">
+        <%= form_for current_user do |f| %>
+            <%= f.label :email %>
+            <br>
+            <%= f.email_field :email %>
+            <br>
+            <%= f.label "Current Password"%>
+            <br>
+            <%= f.password_field :current_password, placeholder: "disabled", disabled: true %>
+            <br>
+            <%= f.label "New Password"%>
+            <br>
+            <%= f.password_field :password, placeholder: "disabled", disabled: true %>
+            <br>
+            <%= f.label "Confirm Password"%>
+            <br>
+            <%= f.password_field :password_confirmation, placeholder: "disabled", disabled: true %>
+            <br>
+            <%= f.submit class: "button" %>
+            <br>
+            <%= link_to :root do %>
+                <input class="button red" type="button" value="Cancel">
+            <% end %>
+        <% end %>
+    </div>
+</div>

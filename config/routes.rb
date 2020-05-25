@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   get 'welcome/index'
   root 'sessions#index'
 
-  resources :users, only: [:new, :create]
+  resources :users
   resources :sessions, only: [:new, :create, :destroy]
 
   get 'signup', to: 'users#new', as: 'signup'

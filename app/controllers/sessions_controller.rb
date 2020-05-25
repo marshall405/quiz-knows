@@ -16,7 +16,7 @@ class SessionsController < ApplicationController
       redirect_to :root, notice: "Logged in!"
     else
       flash[:alert] = "Invalid email or password"
-      render :new
+      redirect_to :login
     end
   end
 
