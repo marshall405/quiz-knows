@@ -13,9 +13,12 @@
             <br>
             <%= f.password_field :password, placeholder: "password" %>
             <br>
-            <%= f.password_field :password, placeholder: "confirm password" %>
+            <%= f.password_field :password_confirmation, placeholder: "confirm password" %>
             <br>
-            <%= f.submit %>
+            <%= f.submit class: "button" %>
+            <%= link_to :login do %>
+                <input class="button" type="button" value="Login">
+            <% end %>
         </div>
     <% end %>
 </div>

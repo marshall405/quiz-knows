@@ -70,6 +70,8 @@ input {
     box-shadow: 1px 1px 1px 2px black;
 }
 
+
+
 .button:active {
     box-shadow: none;
 }
@@ -100,4 +102,9 @@ input {
 .errors {
     list-style: none;
     color: red;
+}
+.notice {
+    list-style: none;
+    color: rgb(31, 181, 53);
+    text-align: center;
 }

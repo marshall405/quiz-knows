@@ -1,13 +1,5 @@
 class UsersController < ApplicationController
   
-  def show
-    if current_user
-      render :show
-    else
-      redirect_to :root
-    end
-  end
-
   def new
     @user = User.new 
   end
@@ -19,9 +11,8 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.valid?
       @user.save
-      redirect_to :login
+      redirect_to :login, notice: "User created successfully! Please sign in!"
     else 
-      # flash.now[:alert] = ""
       render :new
     end
 
@@ -31,7 +22,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:email, :password)
+    params.require(:user).permit(:email, :password, :password_confirmation)
   end
 
 end
