@@ -5,6 +5,11 @@ class UsersController < ApplicationController
   end
 
   def edit
+    if current_user
+      render :edit 
+    else
+      redirect_to :root
+    end
   end
 
   def create
@@ -15,6 +20,18 @@ class UsersController < ApplicationController
     else 
       render :new
     end
+  end
+
+  def update
+    if current_user.email != params[:user][:email]
+      current_user.update(email: params[:user][:email])
+    end
+    if current_user.valid?
+      redirect_to :root
+    else
+      render :edit 
+    end
+
   end
 
   private
