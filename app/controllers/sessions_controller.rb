@@ -1,5 +1,13 @@
 class SessionsController < ApplicationController
   
+  def index
+    if current_user
+      render 'users/show'
+    else
+      redirect_to :login
+    end
+  end
+  
   def create
     # create new session for user
     user = User.find_by_email(params[:email])
