@@ -2,66 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-* {
-    margin: 0;
-    padding: 0;
+.login-form {
+    width: 80%;
+    margin: 20px auto;
 }
 
-header {
-    background: #074462; 
-    color: #fff;
-    padding: 10px;
-}
-
-header h1:hover {
-
-}
-header ul {
-    display: flex;
-    justify-content: flex-end;
-}
-
-header ul li {
-    margin: 10px;
-    list-style: none;
-}
-
-header ul li a {
-    text-decoration: none;
-    color: inherit;
-    border-bottom: 2px solid #074462; 
-}
-
-header ul li a:hover {
-    border-bottom: 2px solid rgb(255, 255, 255); 
-    color: #fff;
-}
-
-footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 2.5rem;
+.inner-login-form {
+    width: 500px;
+    margin: 0 auto;
     text-align: center;
-}
-
-
-.sidebar {
-    position: fixed;
-    background: #c0c0c0;
-    padding: 10px;
-    width: 160px;
-    height: 100%;
-}
-.ad {
-    margin-bottom: 5px;
-    height: 100px;
-    background: #fff;
-    padding: 5px;
-}
-
-
-.container {
-    margin-left: 180px;
-    padding: 5px;
 }

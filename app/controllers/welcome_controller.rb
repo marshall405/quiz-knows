@@ -1,11 +1,11 @@
 class WelcomeController < ApplicationController
   
   def index
-    @ads = [ {"name": "ad 1 click here", "url": "www.amazon.com"},{"name": "ad 2 click here", "url": "www.amazon.com"}]
-    # @user = User.new 
-  
-    render :login
-
+    if current_user
+      render 'users/show'
+    else
+      redirect_to :login
+    end
   end
 
 
