@@ -1,0 +1,16 @@
+<div class="login-form">
+    <h1> Please log in </h1>
+    <%= form_tag sessions_path do%>
+        <div class="inner-login-form">
+            <p class="errors"> <%= alert %></p>
+            <input type="email" name="email" placeholder="email" >
+            <br>
+            <input type="password" name="password" placeholder="password" >
+            <br>
+            <input type="submit" value="Login" class="button" >
+            <%= link_to signup_path do %>
+                <input class="button" type="button" value="Sign Up">
+            <% end %>
+        </div>
+    <% end %>
+</div>

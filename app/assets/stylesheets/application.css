@@ -13,3 +13,98 @@
  *= require_tree .
  *= require_self
  */
+
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background: #074462; 
+    color: #fff;
+    padding: 10px;
+}
+
+header ul {
+    display: flex;
+    justify-content: flex-end;
+}
+
+header ul li {
+    margin: 10px;
+    list-style: none;
+}
+
+header ul li a {
+    text-decoration: none;
+    color: inherit;
+    border-bottom: 2px solid #074462; 
+}
+
+header ul li a:hover {
+    border-bottom: 2px solid rgb(255, 255, 255); 
+    color: #fff;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem;
+    text-align: center;
+}
+
+input {
+    width: 260px;
+    margin: 10px;
+    padding: 5px;
+    height:2rem;
+    font-size: 16px;
+    border: none;
+    box-shadow: 1px 1px 1px 1px black;
+}
+
+.button:hover {
+    cursor: pointer;
+    box-shadow: 1px 1px 1px 2px black;
+}
+
+
+
+.button:active {
+    box-shadow: none;
+}
+.sidebar {
+    position: fixed;
+    background: #c0c0c0;
+    padding: 10px;
+    width: 160px;
+    height: 100%;
+}
+.ad {
+    margin-bottom: 5px;
+    height: 100px;
+    background: #fff;
+    padding: 5px;
+}
+
+.container {
+    margin-left: 160px;
+    width: calc(100% - 160px);
+}
+
+.logout a {
+    color: #d2eff4;
+    font-size: 22px;
+}
+
+.errors {
+    list-style: none;
+    color: red;
+}
+.notice {
+    list-style: none;
+    color: rgb(31, 181, 53);
+    text-align: center;
+}
