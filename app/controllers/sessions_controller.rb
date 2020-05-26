@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
   
   def index
     if current_user
-      render 'users/show'
+      redirect_to user_path(current_user)
     else
       redirect_to :login
     end

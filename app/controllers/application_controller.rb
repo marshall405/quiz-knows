@@ -11,6 +11,7 @@ class ApplicationController < ActionController::Base
     end
 
     def set_ads
+        
         @ads = [ {"name": "ad 1 click here", "url": "www.amazon.com"},{"name": "ad 2 click here", "url": "www.amazon.com"}] 
     end
         
