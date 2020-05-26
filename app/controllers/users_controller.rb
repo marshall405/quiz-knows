@@ -6,7 +6,7 @@ class UsersController < ApplicationController
 
   def show
     @created_quizzes = current_user.created_quizzes
-    @taken_quizzes = current_user.quizzes
+
     render :show 
   end
 
