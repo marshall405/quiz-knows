@@ -14,7 +14,8 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.valid?
       @user.save
-      redirect_to :login, notice: "User created successfully! Please sign in!"
+      session[:user_id] = @user.id 
+      redirect_to :root, notice: "User created successfully! Please sign in!"
     else 
       render :new
     end
