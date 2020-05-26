@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_25_230350) do
+ActiveRecord::Schema.define(version: 2020_05_26_183120) do
+
+  create_table "answers", force: :cascade do |t|
+    t.string "answer_content"
+    t.integer "question_id"
+    t.boolean "correct", default: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "questions", force: :cascade do |t|
-    t.string "question"
+    t.string "question_content"
     t.integer "quiz_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -26,9 +34,10 @@ ActiveRecord::Schema.define(version: 2020_05_25_230350) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "taken_quizzes", force: :cascade do |t|
+  create_table "responses", force: :cascade do |t|
+    t.integer "question_id"
+    t.integer "answer_id"
     t.integer "user_id"
-    t.integer "quiz_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

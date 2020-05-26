@@ -1,6 +1,6 @@
 class Quiz < ApplicationRecord
-    has_many :taken_quizzes
-    has_many :users, through: :taken_quizzes
+    # has_many :taken_quizzes
+    # has_many :users, through: :taken_quizzes
     has_many :questions
     belongs_to :owner, class_name: "User"
 end
