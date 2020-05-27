@@ -26,13 +26,7 @@
     </nav>
   </header>
   <div class="sidebar">
-    <% @ads.each do |ad| %>
-        <%= link_to ad[:url] do %> 
-            <div class="ad">
-                <%= ad[:name] %>
-            </div>
-        <% end %>
-    <%end%>
+    <%= render "stats/index" %>
   </div>
   <div class="container">
     <p class="notice"><%= notice %></p>

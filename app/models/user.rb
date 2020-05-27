@@ -9,7 +9,6 @@ class User < ApplicationRecord
   # has_many :taken_quizzes
   # has_many :quizzes, through: :taken_quizzes
 
-
 end
 
 
