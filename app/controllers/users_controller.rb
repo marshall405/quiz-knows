@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user, except: [:new,:create]
   def new
     @user = User.new 
   end
@@ -34,13 +33,6 @@ class UsersController < ApplicationController
   end
 
   private
-
-  def authenticate_user
-    if !current_user
-      redirect_to :root 
-    end
-  end
-
 
   def user_params
     params.require(:user).permit(:email, :password, :password_confirmation)

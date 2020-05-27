@@ -1,3 +1,16 @@
 // Place all the styles related to the Quiz controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+.question-answers {
+    padding: 10px;
+    border: 1px solid black;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.question-answers input {
+    width: 90%;
+
+}

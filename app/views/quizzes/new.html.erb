@@ -1,0 +1,33 @@
+<h2> Create New Quiz </h2>
+
+<%= form_tag quizzes_path do %>
+    <%= text_field_tag "quiz[title]", nil, placeholder: "Name of Quiz" %>
+    <br>
+
+    <% 10.times do |i| %>
+        <div class="question-answers">
+            <h4> Question <%= i + 1 %> </h4>
+            <%= text_field_tag "quiz[questions][]",nil, placeholder: "question" %>
+            <br>
+            <div class="answers">
+                <% 4.times do |a| %>
+                    <% if a == 0 %>
+                    <%= text_field_tag "answers[#{i}][]",nil, placeholder: "correct answer" %>
+                    <% else %>
+                        <%= text_field_tag "answers[#{i}][]",nil, placeholder: "filler answer" %>
+                    <% end %>
+                    <br>
+                <% end %>
+             </div>
+        </div>
+    <% end %>
+    
+    
+
+    
+
+
+    <%= submit_tag "Create Quiz" %>
+
+<% end %>
+
