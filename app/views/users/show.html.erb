@@ -1,5 +1,16 @@
 <div class="user-home">
     <h2 class="user-header"> Logged in as <%= current_user.email %></h2>
 
-    
+    <div class="created_quizzes">
+        <h2> Created Quizzes </h2>
+        <% current_user.created_quizzes.each do |quiz| %>
+            <h3> <%= quiz.title %></h3>
+        <% end %>
+    </div>
+    <div class="taken_quizzes">
+    <h2> Taken Quizzes </h2>
+    <% current_user.created_quizzes do |quiz| %>
+        <h3> <%= %></h3>
+    <% end %>
 </div>
+</div>  

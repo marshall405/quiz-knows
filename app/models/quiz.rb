@@ -3,6 +3,17 @@ class Quiz < ApplicationRecord
     # has_many :users, through: :taken_quizzes
     has_many :questions
     belongs_to :owner, class_name: "User"
+    
+
+    def self.newest_quiz
+        all.last
+    end
+
+    def self.oldest_quiz
+        all.first
+    end
+
+    
 end
 
 

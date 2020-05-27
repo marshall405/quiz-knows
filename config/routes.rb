@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'sessions#index'
 
   resources :users
+  resources :quizzes
   resources :sessions, only: [:new, :create, :destroy]
 
   get 'signup', to: 'users#new', as: 'signup'
