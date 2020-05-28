@@ -2,6 +2,7 @@ class Quiz < ApplicationRecord
     # has_many :taken_quizzes
     # has_many :users, through: :taken_quizzes
     has_many :questions
+    has_many :responses
     belongs_to :owner, class_name: "User"
     
 
@@ -17,7 +18,7 @@ class Quiz < ApplicationRecord
         all.count
     end
 
-    
+
 
 end
 

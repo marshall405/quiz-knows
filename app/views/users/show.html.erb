@@ -12,7 +12,8 @@
     <div class="user-quizzes">
     <h2> Taken Quizzes </h2>
     <% current_user.taken_quizzes.each do |q| %>
-        <h3> <%= q.title %></h3>
+        <h3> <%= q.title %> </h3>
+        <%= current_user.quiz_result(q) %>
     <% end %>
 </div>
 </div>  
