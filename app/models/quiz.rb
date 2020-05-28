@@ -13,7 +13,10 @@ class Quiz < ApplicationRecord
         all.first
     end
 
-    
+    def self.amount
+        all.count
+    end
+
 end
 
 

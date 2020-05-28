@@ -1,7 +1,7 @@
 <h3> STATS </h3>
 <div class="stat">
     <h6> Quiz Count</h6>
-    <%= Quiz.all.count %>
+    <%= Quiz.amount %>
 </div>
 <div class="stat">
     <h6> Newest Quiz</h6>
@@ -10,6 +10,14 @@
 <div class="stat">
     <h6> Oldest Quiz</h6>
     <%= Quiz.oldest_quiz.title %>
+</div>
+<div class="stat">
+    <h6> User Count</h6>
+    <%= Quiz.amount %>
+</div>
+<div class="stat">
+    <h6> User Most Created</h6>
+    <%= User.most_created %>
 </div>
 
 
