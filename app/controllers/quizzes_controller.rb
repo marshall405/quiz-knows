@@ -18,10 +18,6 @@ class QuizzesController < ApplicationController
         end
     end
 
-    def show 
-        @quiz = Quiz.find_by(id: params[:id])
-    end
-
     def create
         @quiz = current_user.created_quizzes.create(title: params[:quiz][:title])
 
@@ -40,7 +36,7 @@ class QuizzesController < ApplicationController
                 end
             end
         end
-        redirect_to quiz_path(@quiz)
+        redirect_to quizzes_path
     end
 
     def update

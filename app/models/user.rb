@@ -19,10 +19,23 @@ class User < ApplicationRecord
   def self.amount
     all.count
   end
+
   def self.most_created
     user = User.all.max do |user|
       user.created_quizzes.count
     end
     user.email
   end
+
+  def self.most_taken_quizzes
+    user = User.all.max do |user|
+      user.taken_quizzes.count
+    end
+    user.email
+  end
+
+  def self.most_taken_quizzes_count
+      User.find_by(email: most_taken_quizzes).taken_quizzes.count
+  end
+
 end

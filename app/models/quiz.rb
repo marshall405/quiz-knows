@@ -17,6 +17,8 @@ class Quiz < ApplicationRecord
         all.count
     end
 
+    
+
 end
 
 
