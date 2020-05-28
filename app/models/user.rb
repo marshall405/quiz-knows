@@ -8,6 +8,14 @@ class User < ApplicationRecord
 
   # has_many :taken_quizzes
   # has_many :quizzes, through: :taken_quizzes
+
+  def taken_quizzes
+    quizzes = self.responses.map do |r|
+      r.question.quiz 
+    end
+    quizzes.uniq 
+  end
+
   def self.amount
     all.count
   end

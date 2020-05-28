@@ -1,0 +1,29 @@
+<h2> Edit Quiz </h2>
+
+<%= form_tag @quiz, method: :put do %>
+    <%= text_field_tag :title, value=@quiz.title %>
+    <br>
+
+
+    <% @quiz.questions.each_with_index do |q, i| %>
+        <div class="question-answers">
+            <h4> Question <%= i + 1 %> </h4>
+            <%= text_field_tag "quiz[questions][#{q.id}]",nil, value: q.question_content %>
+            <br>
+            <div class="answers">
+                <% q.answers.each_with_index do |a, a_index| %>
+                    <% if a_index == 0 %>
+                    
+                        <%= text_field_tag "answers[#{a.id}]",nil, value: a.answer_content %> Correct Answer
+
+                    <% else %>
+                        <%= text_field_tag "answers[#{a.id}]",nil,  value: a.answer_content %>
+                    <% end %>
+                    <br>
+                <% end %>
+             </div>
+        </div>
+    <% end %>
+    <%= submit_tag %>
+
+<% end %>

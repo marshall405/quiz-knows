@@ -6,8 +6,6 @@ class UsersController < ApplicationController
 
   def show
     @created_quizzes = current_user.created_quizzes
-
-    render :show 
   end
 
   def create
@@ -15,7 +13,7 @@ class UsersController < ApplicationController
     if @user.valid?
       @user.save
       session[:user_id] = @user.id 
-      redirect_to :root, notice: "User created successfully! Please sign in!"
+      redirect_to :root, notice: "User created successfully! Welcome to the homepage"
     else 
       render :new
     end
