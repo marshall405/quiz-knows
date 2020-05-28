@@ -11,11 +11,13 @@ class User < ApplicationRecord
   # has_many :quizzes, through: :taken_quizzes
 
   def quiz_result(quiz)
-      results = quiz.responses.map do |res|
-        res.answer.correct
+    # binding.pry
+      results = quiz.responses.select do |res|
+         res.user_id == self.id
       end
-      right = results.select do |r| r end
-      wrong = results.select do |w| !w end 
+
+      right = results.select do |r| r.answer.correct end
+      wrong = results.select do |w| !w.answer.correct end 
       right.count.to_f / (right.count.to_f + wrong.count.to_f)
   end
 
@@ -24,6 +26,32 @@ class User < ApplicationRecord
       r.question.quiz 
     end
     quizzes.uniq
+  end
+
+  def average_score
+    score = 0
+    if !taken_quizzes.empty?
+      taken_quizzes.each do |quiz|
+        score += quiz_result(quiz)
+      end
+      score / taken_quizzes.count
+    else
+      0
+    end
+  end
+
+  def self.highest_score
+    user = User.all.max do |user|
+      user.average_score
+    end
+    user.email
+  end
+
+  def self.highest_score_number
+    user = User.all.max do |user|
+      user.average_score
+    end
+    user.average_score
   end
 
   def self.amount

@@ -15,5 +15,11 @@
         <h3> <%= q.title %> </h3>
         <%= current_user.quiz_result(q) %>
     <% end %>
+    <br>
+    <br>
+    <br>
+
+    <h5>Average Score: <%= current_user.average_score %></h5>
 </div>
-</div>  
+</div>
+<%=@params  %>
