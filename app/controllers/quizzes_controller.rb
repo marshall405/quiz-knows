@@ -10,6 +10,14 @@ class QuizzesController < ApplicationController
         @question = Question.new
     end
 
+    def edit
+        @quiz = Quiz.find_by(id: params[:id])
+        if @quiz.owner_id != current_user.id
+            flash[:alert] = "Can not edit someone elses quiz"
+            redirect_to user_path current_user
+        end
+    end
+
     def show 
         @quiz = Quiz.find_by(id: params[:id])
     end
@@ -36,7 +44,20 @@ class QuizzesController < ApplicationController
     end
 
     def update
-        puts params
+        quiz = Quiz.find_by(id: params[:id])
+        quiz.update(title: params[:title])
+
+        params[:quiz][:questions].each do |q_id, q_val|
+            Question.find_by(id: q_id).update(question_content: q_val)
+        end
+
+        if params[:answers]
+            params[:answers].each do |a_id, a_val|
+                Answer.find_by(id: a_id).update(answer_content: a_val)
+            end
+        end 
+
+        redirect_to user_path(current_user), notice: "Quiz updated"
     end
 
 

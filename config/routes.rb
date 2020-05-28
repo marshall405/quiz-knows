@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
+  
   get 'welcome/index'
   root 'sessions#index'
-
+  resources :responses
   resources :users
   resources :quizzes
   resources :sessions, only: [:new, :create, :destroy]

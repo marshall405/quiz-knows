@@ -1,0 +1,14 @@
+<h1> <%= @quiz.title %></h1>
+
+<%= form_tag @response do %>
+    <input type=hidden name=quiz_id[<%=@quiz.id%>] >
+    <% @quiz.questions.each_with_index do |question, index| %>
+        <h3> <%= question.question_content %> </h3>
+        <% question.answers.each do |answer| %>
+            <p> <%=answer.answer_content %><%= radio_button :answers, answer.id, answer %></p>
+        <% end %>
+    <% end %>
+    
+    <%= submit_tag "Submit Quiz" %>
+
+<% end %>
