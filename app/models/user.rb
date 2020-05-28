@@ -8,8 +8,13 @@ class User < ApplicationRecord
 
   # has_many :taken_quizzes
   # has_many :quizzes, through: :taken_quizzes
-
+  def self.amount
+    all.count
+  end
+  def self.most_created
+    user = User.all.max do |user|
+      user.created_quizzes.count
+    end
+    user.email
+  end
 end
-
-
-# 

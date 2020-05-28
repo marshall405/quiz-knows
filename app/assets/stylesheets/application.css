@@ -55,7 +55,7 @@ footer {
     text-align: center;
 }
 
-input {
+input:not([type="radio"]) {
     width: 260px;
     margin: 10px;
     padding: 5px;

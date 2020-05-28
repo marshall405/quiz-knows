@@ -18,7 +18,8 @@
               <li><%= link_to "Logout", :logout %></li>
               <li><%= link_to "Edit User", edit_user_path(current_user) %></li>
               <li><%= link_to "Create Quiz", new_quiz_path %></li>
-              <li><%= link_to "Take Quiz", new_quiz_path %></li>
+              <li><%= link_to "Take Quiz", quizzes_path %></li>
+              <li><%= link_to "Home Page", user_path(current_user) %></li>
             <% else %>
               <li><a href="/"> about </a></li>
               <li><a href="/"> enter social-security </a></li>
