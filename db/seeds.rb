@@ -17,7 +17,7 @@ b = Answer.create(answer_content: "B", question_id: question.id)
 c = Answer.create(answer_content: "C", question_id: question.id)
 
 
-Response.create(question_id: question.id, answer_id: a.id, user_id: user.id)
+Response.create(question_id: question.id, answer_id: a.id, user_id: user.id, quiz_id: quiz.id)
 
 
 

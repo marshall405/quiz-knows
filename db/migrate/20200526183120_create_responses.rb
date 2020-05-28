@@ -4,6 +4,7 @@ class CreateResponses < ActiveRecord::Migration[6.0]
       t.integer :question_id
       t.integer :answer_id
       t.integer :user_id
+      t.integer :quiz_id
       t.timestamps
     end
   end

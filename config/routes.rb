@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root 'sessions#index'
   resources :responses
   resources :users
-  resources :quizzes
+  resources :quizzes, only: [:new, :update, :create, :index, :edit ]
   resources :sessions, only: [:new, :create, :destroy]
 
   get 'signup', to: 'users#new', as: 'signup'
