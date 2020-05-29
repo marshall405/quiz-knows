@@ -97,7 +97,7 @@ input:focus {
     width: 160px;
     height: 100%;
     overflow: scroll;
-    padding-bottom: 350px;
+    padding-bottom: 50px;
 }
 
 .container {
@@ -148,7 +148,9 @@ input[disabled] {
     overflow-x: scroll;
     background: black;
 }
-
+.ad-bottom {
+    margin-top: 80px;
+}
 .ad {
     margin: 0 5px;
 }
