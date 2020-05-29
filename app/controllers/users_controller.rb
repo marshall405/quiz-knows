@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  skip_before_action :authenticate_user, only: [:create, :new] 
+  skip_before_action :authenticate_user, only: [:create, :new, :update] 
   def new
     @user = User.new 
   end
@@ -21,9 +21,8 @@ class UsersController < ApplicationController
 
   def update
     if current_user.email != params[:user][:email]
-      current_user.update(email: params[:user][:email])
-    end
-    if current_user.valid?
+      current_user.email = params[:user][:email]
+      current_user.save(:validate => false)
       redirect_to :root, notice: "Email updated!"
     else
       render :edit 
