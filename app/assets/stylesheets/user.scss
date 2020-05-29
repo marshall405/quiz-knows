@@ -10,6 +10,14 @@
     text-align: right;
     font-size: 14px;
     color: #074462; 
+    animation: logo;
+    animation-duration: 2s;
+    
+}
+
+@keyframes logo {
+    from {width: 200px;}
+    to {width: 100%}
 }
 
 .quiz {
@@ -21,6 +29,7 @@
     margin: 20px 0px;
     padding: 5px;
     box-shadow: 0px 0px 10px black;
+    
 }
 .user-quizzes h2 {
     text-align: center;
@@ -31,10 +40,23 @@
     color: rgb(32, 110, 52);
 }
 
-.user-quizzes h3:hover {
+.created-quizzes:hover {
     background: #aaacad;
 }
 .user-quizzes h3 {
     padding: 5px;
     margin: 5px;
+}
+
+.quiz-results, .created-quizzes {
+    margin: 20px;
+    background: #dee0e0;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.user-quizzes h5 {
+    text-align: center;
 }

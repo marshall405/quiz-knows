@@ -31,7 +31,6 @@ class Quiz < ApplicationRecord
         end.uniq
     end
 
-
 end
 
 

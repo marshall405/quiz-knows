@@ -29,27 +29,28 @@ class User < ApplicationRecord
   end
 
   def average_score
+    quizzes = taken_quizzes
     score = 0
-    if !taken_quizzes.empty?
-      taken_quizzes.each do |quiz|
+    if !quizzes.empty?
+      quizzes.each do |quiz|
         score += quiz_result(quiz)
       end
-      score / taken_quizzes.count
+      score / quizzes.count
     else
       0
     end
   end
 
   def self.highest_score
-    user = User.all.max do |user|
-      user.average_score
+    user = User.all.max do |a,b|
+      a.average_score <=> b.average_score
     end
     user.email
   end
 
   def self.highest_score_number
-    user = User.all.max do |user|
-      user.average_score
+    user = User.all.max do |a,b|
+      a.average_score <=> b.average_score
     end
     user.average_score
   end
@@ -59,21 +60,44 @@ class User < ApplicationRecord
   end
 
   def self.most_created
-    user = User.all.max do |user|
-      user.created_quizzes.count
+    user = User.all.max do |a,b|
+      a.created_quizzes.count <=> b.created_quizzes.count
     end
     user.email
   end
 
+  def self.most_created_number
+    User.find_by(email: most_created).created_quizzes.count
+
+  end 
+
   def self.most_taken_quizzes
-    user = User.all.max do |user|
-      user.taken_quizzes.count
+    user = User.all.max do |a,b|
+      a.taken_quizzes.count <=> b.taken_quizzes.count
     end
     user.email
   end
 
   def self.most_taken_quizzes_count
       User.find_by(email: most_taken_quizzes).taken_quizzes.count
+  end
+
+  def self.most_responses
+    user = User.all.max do |a,b|
+      a.responses.count <=> b.responses.count
+    end
+    user.email
+  end
+
+  def self.most_responses_count
+    User.find_by(email: most_responses).responses.count
+  end
+
+  def self.biggest_dummy
+    user = User.all.min do |a,b|
+      a.average_score <=> b.average_score
+    end
+    user.email
   end
 
 end

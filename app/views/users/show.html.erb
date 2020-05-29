@@ -5,21 +5,25 @@
         <h2> Created Quizzes </h2>
         <% current_user.created_quizzes.each do |quiz| %>
             <%= link_to edit_quiz_path(quiz) do %>
-                <h3> <%= quiz.title %></h3>
+                <div class="created-quizzes">
+                    <h3> <%= quiz.title %> </h3>
+                    <p><%= quiz.created_at %></p>
+                </div>
             <% end %>
         <% end %>
     </div>
     <div class="user-quizzes">
-    <h2> Taken Quizzes </h2>
-    <% current_user.taken_quizzes.each do |q| %>
-        <h3> <%= q.title %> </h3>
-        <%= current_user.quiz_result(q) %>
-    <% end %>
-    <br>
-    <br>
-    <br>
+        <h2> Taken Quizzes </h2>
+        <% current_user.taken_quizzes.each do |q| %>
+            <div class="quiz-results">
+                <h3> <%= q.title %> </h3>
+                Result: <%= (current_user.quiz_result(q) * 100).round(0) %>%
+            </div>
+        <% end %>
+        <br>
+        <br>
+        <br>
+        <h5>Average Score: <%= (current_user.average_score * 100).round(0) %>%</h5>
+    </div>
 
-    <h5>Average Score: <%= current_user.average_score %></h5>
 </div>
-</div>
-<%=@params  %>
