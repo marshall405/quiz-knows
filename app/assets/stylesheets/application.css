@@ -31,7 +31,7 @@ body {
 .spin {
     display: inline-block;
     color: red;
-    font-size: 44px;
+    font-size: 64px;
     animation: spinner 2s linear infinite;
 }
 
