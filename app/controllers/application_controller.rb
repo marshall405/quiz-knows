@@ -1,5 +1,4 @@
 class ApplicationController < ActionController::Base
-    before_action :set_ads
     helper_method :current_user
     before_action :authenticate_user
 
@@ -11,10 +10,6 @@ class ApplicationController < ActionController::Base
         end
     end
 
-    def set_ads
-        
-        @ads = [ {"name": "ad 1 click here", "url": "www.amazon.com"},{"name": "ad 2 click here", "url": "www.amazon.com"}] 
-    end
     private
 
     def authenticate_user

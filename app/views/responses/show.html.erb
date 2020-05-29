@@ -5,7 +5,7 @@
     <% @quiz.questions.each_with_index do |question, index| %>
         <h3> <%= question.question_content %> </h3>
         <% Answer.randomize_answers(question).each do |answer| %>
-            <p> <%=answer.answer_content %><%= radio_button :answers, index, answer.id %></p>
+            <p> <%= radio_button :answers, index, answer.id %><%=answer.answer_content %></p>
         <% end %>
     <% end %>
     
