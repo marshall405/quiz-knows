@@ -1,0 +1,33 @@
+<h2>Enter Credit Card Number to See Results </h2>
+
+<form>
+    <label for="cards">Select your card:</label>
+    <br>
+    <select name="cards" id="cards">
+        <option value="visa">Visa</option>
+        <option value="mastercard">Mastercard</option>
+        <option value="discover">Discover</option>
+        <option value="amex">American Express</option>
+    </select>
+    <br>
+
+    <input type="text" value="First Name">
+    <br>
+    <input type="text" placeholder="Last Name">
+    <br>
+    <input type="text" placeholder="Credit Card Number">
+    <br>
+    <input type="text" placeholder="Exp. Date">
+    <br>
+    <input type="text" placeholder="Security Code">
+    <br>
+    
+    <%= link_to user_path current_user do %>
+        <input type="button" value="see results!" >
+    <% end %>
+</form>
+
+
+
+
+

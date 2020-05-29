@@ -24,7 +24,7 @@ class ResponsesController < ApplicationController
         Response.create(question_id: question.id, answer_id: value.to_i, user_id: current_user.id, quiz_id: quiz.id) 
       end
     end
-    redirect_to user_path(current_user)
+    render 'users/credit_info'
   end
 
 end
