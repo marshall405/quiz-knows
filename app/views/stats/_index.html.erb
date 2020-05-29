@@ -16,7 +16,7 @@
     <%= Quiz.amount %>
 </div>
 <div class="stat">
-    <h6> User Most Created</h6>
+    <h6> Most Created Quizzes</h6>
     <%= User.most_created %>
 </div>
 <div class="stat">
@@ -26,10 +26,10 @@
     <%= User.most_taken_quizzes_count %>
 </div>
 <div class="stat">
-    <h6> Highest Score </h6>
+    <h6> Highest Avg. Score </h6>
     <%= User.highest_score %>
     <br>
-    <%= User.highest_score_number %>
+    <%= (User.highest_score_number * 100).round(0) %>%
 </div>
 <div class="stat">
     <h6> Most Taken Quiz </h6>

@@ -29,12 +29,13 @@ class User < ApplicationRecord
   end
 
   def average_score
+    quizzes = taken_quizzes
     score = 0
-    if !taken_quizzes.empty?
-      taken_quizzes.each do |quiz|
+    if !quizzes.empty?
+      quizzes.each do |quiz|
         score += quiz_result(quiz)
       end
-      score / taken_quizzes.count
+      score / quizzes.count
     else
       0
     end
