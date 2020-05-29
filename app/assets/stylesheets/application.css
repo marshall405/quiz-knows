@@ -20,6 +20,16 @@
     box-sizing: border-box;
 }
 
+@keyframes spinner {
+    to {transform: rotateY(360deg);}
+}
+.spin {
+    display: inline-block;
+    color: red;
+    font-size: 44px;
+    animation: spinner 2s linear infinite;
+}
+
 header {
     background: #074462; 
     color: #fff;
@@ -48,7 +58,6 @@ header ul li a:hover {
 }
 
 footer {
-    /* position: absolute; */
     bottom: 0;
     width: 100%;
     height: 2.5rem;
@@ -72,8 +81,6 @@ input:focus {
     cursor: pointer;
     box-shadow: 1px 1px 1px 2px black;
 }
-
-
 
 .button:active {
     box-shadow: none;
@@ -120,7 +127,6 @@ input:focus {
 }
 
 input[disabled] {
-    value: "disabled";
     background: #d2d2d2;
     box-shadow: none;
 }

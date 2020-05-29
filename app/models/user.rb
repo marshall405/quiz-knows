@@ -7,9 +7,6 @@ class User < ApplicationRecord
   has_many :created_quizzes, foreign_key: :owner_id, class_name: 'Quiz'
   has_many :responses 
 
-  # has_many :taken_quizzes
-  # has_many :quizzes, through: :taken_quizzes
-
   def quiz_result(quiz)
     # binding.pry
       results = quiz.responses.select do |res|

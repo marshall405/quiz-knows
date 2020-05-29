@@ -2,22 +2,29 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+
 .user-home {
     padding: 5px;
+    animation: user-home;
+    animation-duration: 2s;
 }
 
 .user-header {
     text-align: right;
     font-size: 14px;
     color: #074462; 
-    animation: logo;
+    animation: user-home;
     animation-duration: 2s;
     
 }
 
-@keyframes logo {
-    from {width: 200px;}
-    to {width: 100%}
+@keyframes user-home {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 .quiz {

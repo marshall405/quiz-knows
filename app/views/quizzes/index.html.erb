@@ -1,11 +1,13 @@
 <h1> Quizzes: </h1>
 <p class="errors"> <%= alert %></p>
     <% @quizzes.each do |quiz| %>
+        <div class="quizzes">
         <h4> <%= quiz.title %> </h4>
         <% if quiz.owner_id == current_user.id %>
             <p><%= link_to "Edit Quiz", edit_quiz_path(quiz.id) %></p>
         <% end %>
         <p><%= link_to "Take Quiz", response_path(quiz.id) %></p>
+        </div>
     <% end %>
 
    

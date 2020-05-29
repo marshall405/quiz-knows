@@ -12,5 +12,28 @@
 
 .question-answers input {
     width: 90%;
+}
 
+
+.quizzes {
+    margin: 10px;
+    padding: 10px;
+    background: rgb(184, 179, 179);
+}
+
+.quizzes h4 {
+    text-decoration: underline;
+}
+.quizzes p {
+    display: inline-block;
+    margin: 15px;
+}
+.quizzes a {
+    text-decoration: none;
+    color: rgb(17, 121, 57);
+    text-shadow: 0px 0px 1px black;
+
+}
+.quizzes a:hover {
+    text-shadow: none;
 }
