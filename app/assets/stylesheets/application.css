@@ -20,6 +20,11 @@
     box-sizing: border-box;
 }
 
+body {
+    background: #d2d2d2;
+    color: #f50000; 
+
+}
 @keyframes spinner {
     to {transform: rotateY(360deg);}
 }
@@ -31,7 +36,7 @@
 }
 
 header {
-    background: #074462; 
+    background: #000000; 
     color: #fff;
     padding: 10px;
 }
@@ -48,8 +53,8 @@ header ul li {
 
 header ul li a {
     text-decoration: none;
-    color: inherit;
-    border-bottom: 2px solid #074462; 
+    color: #f50000; 
+    border-bottom: 2px solid #f50000; 
 }
 
 header ul li a:hover {
@@ -86,8 +91,8 @@ input:focus {
     box-shadow: none;
 }
 .sidebar {
-    position: fixed;
-    background: #c0c0c0;
+    position: absolute;
+    background: #000000;
     padding: 10px;
     width: 160px;
     height: 100%;
@@ -128,13 +133,10 @@ input[disabled] {
 .stat {
     margin-bottom: 5px;
     height: 120px;
-    background: #fff;
+    background: #d2d2d2;
     padding: 5px;
     word-wrap: break-word;
 }
-
-
-
 
 .ads {
     height: 200px;
