@@ -19,6 +19,10 @@ class UsersController < ApplicationController
     end
   end
 
+  def social 
+    render :social
+  end
+
   def update
     if current_user.email != params[:user][:email]
       current_user.email = params[:user][:email]

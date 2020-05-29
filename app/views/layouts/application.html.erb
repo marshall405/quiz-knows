@@ -23,10 +23,6 @@
               <li><%= link_to "Create Quiz", new_quiz_path %></li>
               <li><%= link_to "Take Quiz", quizzes_path %></li>
               <li><%= link_to "Home Page", user_path(current_user) %></li>
-            <% else %>
-              <li><a href="/"> about </a></li>
-              <li><a href="/"> enter social-security </a></li>
-              <li><a href="/"> getting started </a></li>
             <% end %>
         </ul>
     </nav>
