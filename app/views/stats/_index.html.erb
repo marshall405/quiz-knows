@@ -18,6 +18,8 @@
 <div class="stat">
     <h6> Most Created Quizzes</h6>
     <%= User.most_created %>
+    <br>
+    <%= User.most_created_number %>
 </div>
 <div class="stat">
     <h6> Most Quizzes Taken</h6>
@@ -35,6 +37,23 @@
     <h6> Most Taken Quiz </h6>
     <%= Quiz.most_taken_quiz %>
 </div>
+<div class="stat">
+    <h6> Most Active User </h6>
+    <%= User.most_responses %>
+    <br>
+    <%= User.most_responses_count %>
+    <p>Questions Answered</p>
+</div>
+<div class="stat">
+    <h6> Total Questions </h6>
+    <%= Question.total_questions %>
+    <br>
+</div> 
+<div class="stat">
+    <h6> Biggest Dummy </h6>
+    <%= User.biggest_dummy %>
+</div> 
+
 
 
 
